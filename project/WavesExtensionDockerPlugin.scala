@@ -5,9 +5,9 @@ import sbt.{AutoPlugin, Def, Plugins, inTask, taskKey}
 import sbtdocker.DockerPlugin
 import sbtdocker.DockerPlugin.autoImport._
 
-object WavesExtensionDockerPlugin extends AutoPlugin {
+object crdexExtensionDockerPlugin extends AutoPlugin {
 
-  object autoImport extends WavesExtensionDockerKeys
+  object autoImport extends crdexExtensionDockerKeys
   import autoImport._
 
   override def requires: Plugins = JvmPlugin && DockerPlugin
@@ -17,11 +17,11 @@ object WavesExtensionDockerPlugin extends AutoPlugin {
       Seq(
         additionalFiles := Seq.empty,
         exposedPorts := Set.empty,
-        baseImage := "com.wavesplatform/node-it:latest",
+        baseImage := "com.crdexplatform/node-it:latest",
         dockerfile := {
           new Dockerfile {
             from(baseImage.value)
-            add(additionalFiles.value, "/opt/waves/")
+            add(additionalFiles.value, "/opt/crdex/")
             expose(exposedPorts.value.toSeq: _*)
           }
         },
@@ -29,8 +29,8 @@ object WavesExtensionDockerPlugin extends AutoPlugin {
       ))
 }
 
-trait WavesExtensionDockerKeys {
-  val additionalFiles    = taskKey[Seq[File]]("Additional files to copy to /opt/waves")
+trait crdexExtensionDockerKeys {
+  val additionalFiles    = taskKey[Seq[File]]("Additional files to copy to /opt/crdex")
   val exposedPorts       = taskKey[Set[Int]]("Exposed ports")
   val buildNodeContainer = taskKey[Unit]("Builds a NODE container")
   val baseImage          = taskKey[String]("A base image for this container")

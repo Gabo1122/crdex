@@ -6,11 +6,11 @@ import sbt.internal.inc.ReflectUtilities
 
 addCompilerPlugin("org.scalamacros" % "paradise" % "2.1.0" cross CrossVersion.full)
 
-def nodeVersionTag: String = "v0.0.1"
+def nodeVersionTag: String = "CR Dex"
 
-lazy val node = ProjectRef(uri(s"git://github.com/Gabo1122/dex.git"), "node")
+lazy val node = ProjectRef(uri(s"git://github.com/Gabo1122/crdex.git"), "node")
 
-lazy val `node-it` = ProjectRef(uri(s"git://github.com/Gabo1122/dex.git"), "node-it")
+lazy val `node-it` = ProjectRef(uri(s"git://github.com/Gabo1122/crdex.git"), "node-it")
 
 lazy val dex = project.dependsOn(node % "compile;test->test;runtime->provided")
 
@@ -48,10 +48,10 @@ lazy val root = (project in file("."))
 inScope(Global)(
   Seq(
     scalaVersion := "2.12.8",
-    organization := "com.wavesplatform",
-    organizationName := "Waves Platform",
-    organizationHomepage := Some(url("https://wavesplatform.com")),
-    scmInfo := Some(ScmInfo(url("https://github.com/wavesplatform/dex"), "git@github.com:wavesplatform/dex.git", None)),
+    organization := "com.crdexplatform",
+    organizationName := "CR Dex Platform",
+    organizationHomepage := Some(url("https://thebitcoindomain.com")),
+    scmInfo := Some(ScmInfo(url("https://github.com/Gabo1122/crdex"), "git@github.com:gabo1122/crdex.git", None)),
     licenses := Seq(("MIT", url("https://github.com/wavesplatform/dex/blob/master/LICENSE"))),
     scalacOptions ++= Seq(
       "-feature",

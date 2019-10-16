@@ -6,8 +6,8 @@ resolvers += "dnvriend" at "http://dl.bintray.com/dnvriend/maven"
 libraryDependencies ++= Dependencies.dex
 
 val packageSettings = Seq(
-  maintainer := "wavesplatform.com",
-  packageSummary := "DEX",
+  maintainer := "thecoindomain.com",
+  packageSummary := "CR DEX",
   packageDescription := s"Decentralized EXchange for Waves network. Compatible with ${nodeVersion.value} node version"
 )
 

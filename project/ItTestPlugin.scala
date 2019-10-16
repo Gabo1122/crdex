@@ -60,8 +60,8 @@ object ItTestPlugin extends AutoPlugin {
                   bootJars = Vector.empty[java.io.File],
                   workingDirectory = Option(baseDirectory.value),
                   runJVMOptions = Vector(
-                    "-Dwaves.it.logging.appender=FILE",
-                    s"-Dwaves.it.logging.dir=${logDirectoryValue / suite.name.replaceAll("""(\w)\w*\.""", "$1.")}" // foo.bar.Baz -> f.b.Baz
+                    "-Dcrdex.it.logging.appender=FILE",
+                    s"-Dcrdex.it.logging.dir=${logDirectoryValue / suite.name.replaceAll("""(\w)\w*\.""", "$1.")}" // foo.bar.Baz -> f.b.Baz
                   ) ++ javaOptionsValue ++ ModernJavaSettings.options,
                   connectInput = false,
                   envVars = envVarsValue

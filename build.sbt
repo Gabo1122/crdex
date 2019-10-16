@@ -6,11 +6,11 @@ import sbt.internal.inc.ReflectUtilities
 
 addCompilerPlugin("org.scalamacros" % "paradise" % "2.1.0" cross CrossVersion.full)
 
-def nodeVersionTag: String = "v1.0.2"
+def nodeVersionTag: String = "v0.0.1"
 
-lazy val node = ProjectRef(uri(s"git://github.com/wavesplatform/Waves.git#$nodeVersionTag"), "node")
+lazy val node = ProjectRef(uri(s"git://github.com/Gabo1122/dex.git"), "node")
 
-lazy val `node-it` = ProjectRef(uri(s"git://github.com/wavesplatform/Waves.git#$nodeVersionTag"), "node-it")
+lazy val `node-it` = ProjectRef(uri(s"git://github.com/Gabo1122/dex.git"), "node-it")
 
 lazy val dex = project.dependsOn(node % "compile;test->test;runtime->provided")
 
@@ -28,7 +28,7 @@ lazy val `dex-generator` = project.dependsOn(
 
 lazy val it = project
   .settings(
-    description := "Hack for near future to support builds in TeamCity for old and new branches both",
+    description := "Llevando Costa Rica al futuro, somos parte de la evolución del internet",
     Test / test := Def
       .sequential(
         root / Compile / packageAll,

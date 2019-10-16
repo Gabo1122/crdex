@@ -19,7 +19,7 @@ pipeline {
         }
         stage('Check containers') {
             steps {
-                sh 'docker rmi com.wavesplatform/it com.wavesplatform/node-it com.wavesplatform/dex-it || true'
+                sh 'docker rmi com.crdexplatform/it com.crdexplatform/node-it com.crdexplatform/dex-it || true'
                 sh 'docker ps -a'
                 sh 'docker images'
                 sh 'docker network ls'

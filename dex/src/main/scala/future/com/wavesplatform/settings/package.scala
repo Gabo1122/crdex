@@ -1,4 +1,4 @@
-package future.com.wavesplatform
+package future.com.crdexplatform
 
 import cats.data.NonEmptyList
 import net.ceedubs.ficus.Ficus.traversableReader

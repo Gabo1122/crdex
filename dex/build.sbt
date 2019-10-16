@@ -15,7 +15,7 @@ packageSettings
 inScope(Global)(packageSettings)
 
 lazy val versionSourceTask = Def.task {
-  val versionFile      = sourceManaged.value / "com" / "wavesplatform" / "dex" / "Version.scala"
+  val versionFile      = sourceManaged.value / "com" / "crdexplatform" / "dex" / "Version.scala"
   val versionExtractor = """(\d+)\.(\d+)\.(\d+).*""".r
   val (major, minor, patch) = version.value match {
     case versionExtractor(ma, mi, pa) => (ma.toInt, mi.toInt, pa.toInt)
@@ -24,7 +24,7 @@ lazy val versionSourceTask = Def.task {
 
   IO.write(
     versionFile,
-    s"""package com.wavesplatform.dex
+    s"""package com.crdexplatform.dex
        |
        |object Version {
        |  val VersionString = "${version.value}"
